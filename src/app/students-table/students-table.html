@@ -1,0 +1,66 @@
+<div class="container">
+    <ng-container *ngIf="dataSource$ | async as dataSource">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef> City </th>
+            <td mat-cell *matCellDef="let user"> {{user.city}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef> Country </th>
+            <td mat-cell *matCellDef="let user"> {{user.country}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="passportDeclaration">
+            <th mat-header-cell *matHeaderCellDef> Passport Declaration </th>
+            <td mat-cell *matCellDef="let user"> {{user.passportDeclaration}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fitnessDeclaration">
+            <th mat-header-cell *matHeaderCellDef> Fitness Declaration </th>
+            <td mat-cell *matCellDef="let user"> {{user.fitnessDeclaration}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="courseName">
+            <th mat-header-cell *matHeaderCellDef> Course Name </th>
+            <td mat-cell *matCellDef="let user"> {{user.courseName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let user"> {{user.date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef> State </th>
+            <td mat-cell *matCellDef="let user"> {{user.state}} </td>
+        </ng-container>
+        <ng-container matColumnDef="subjects">
+            <th mat-header-cell *matHeaderCellDef> Subjects </th>
+            <td mat-cell *matCellDef="let user"> {{user.subjects}} </td>
+        </ng-container>
+        <ng-container matColumnDef="street">
+            <th mat-header-cell *matHeaderCellDef> Street </th>
+            <td mat-cell *matCellDef="let user"> {{user.street}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Phone </th>
+            <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="postalCode">
+            <th mat-header-cell *matHeaderCellDef> Postal Code </th>
+            <td mat-cell *matCellDef="let user"> {{user.postalCode}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        </table>
+    </ng-container>
+</div>
